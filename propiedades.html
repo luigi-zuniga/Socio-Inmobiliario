@@ -31,6 +31,157 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        *
+        {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        .contenedor
+        {
+          width: 100%;
+          padding: 5px 10px;
+          border: solid 1px;
+          border-color: rgba(0, 0, 0, .1);
+          border-radius: 10px;
+        }
+        .titulo
+        {
+          padding: 0 10px;
+          background: white;
+          width: 100%;
+          height: 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+        }
+        .titulo p {margin: 0; font-weight: bold;}
+        .titulo div
+        {
+          font-size:13px;
+        }
+        .titulo div p{margin: 0; font-size: 13px;}
+        .prev
+        {
+          width: 100%;
+          height: 250px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+        }
+        .prev img
+        {
+          max-height:100%;
+          min-width: 95%;
+        }
+        .info
+        {
+          width: 100%;
+          height: 240px;
+          background: white;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+        .info .valores
+        {
+          width: 100%;
+          height: 15%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 15px;
+          font-size: 14px;
+        }
+        .info .valores .valorAcumulado
+        {
+          display: flex;
+          flex-direction: row;
+          margin:  0;
+        }
+        .info .valores .valorAcumulado p{margin:  0;}
+        .info .valores .valorTotal {margin:  0;}
+        .info .progress
+        {
+          height: 15px;
+          width: 90%;
+          background: #d6d6d6;
+          overflow: hidden;
+          position: relative;
+        }
+        .info .progress:before
+        {
+          content: "";
+          position: absolute;
+          height: 15px;
+          width: 100%;
+          background: green;
+          left:-50%;
+          top:0;
+        }
+        .info .datos
+        {
+          width: 100%;
+          height: 20%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 20px;
+          font-size: 14px;
+        }
+        .info .datos .personas p{margin: 0}
+        .info .rentabilidad
+        {
+          margin-top: 5px;
+          height: 35%;
+          width: 90%;
+          border: 1px solid;
+          display: flex;
+          flex-direction: row;
+        }
+        .info .rentabilidad .porcentajes
+        {
+          font-size: 20px;
+        }
+        .info  .rentabilidad .bloqueUno,
+        .info  .rentabilidad .bloqueDos
+        {
+          width:50%;
+          height:100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction:column
+        }
+        .info  .rentabilidad .bloqueUno .titulo,
+        .info  .rentabilidad .bloqueDos .titulo
+        {
+          font-size: 10px;
+          text-align: center;
+          height: 30px;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+        }
+        .info button
+        {
+          margin: 10px 0px;
+          width: 90%;
+          height: 15%;
+          background: #337ab7;
+          border: none;
+          border-bottom: 3px solid gray;
+          color: white;
+          transition: .5s ease;
+        }
+        .info button:hover
+        {
+            background-color: #23527b;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -51,7 +202,7 @@
                         <a class="page-scroll" href="#download">Ingresar</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="propiedades.html">Propiedades</a>
+                        <a class="page-scroll" href="">Propiedades</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#features">Como Funciona</a>
@@ -63,21 +214,6 @@
             </div>
         </div>
     </nav>
-
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="header-content">
-                        <div class="header-content-inner text-center">
-                            <h1>Únete a la revolución del mercado inmobiliario donde invertir en propiedades finalmente es fácil!</h1>
-                            <a href="#download" class="btn btn-outline btn-xl page-scroll">Ver Propiedades</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <section id="download" class="download text-center">
         <div class="container">
@@ -92,34 +228,132 @@
     <div class="row">   
         <div class="col-md-10 col-md-offset-1">
             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="img/image2.jpg" alt="...">
-                    <div class="caption">
-                        <h3>Almirante Barroso 46</h3>
-                        <p class="text-left">
-                            En la vivienda, exactamente situada en la calle Ayala 119, se llevará a cabo una reforma completa.</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Invertir</a></p>
+                <div class="contenedor">
+                  <div class="titulo">
+                      <p>Malvarrosa</p>
+                      <div> 
+                         <p>Valencia</p>
+                         <p>1 vivienda</p>
+                      </div>
+                  </div>
+                  <div class="prev">
+                      <img src="img/image2.jpg" alt="" />
+                  </div>
+                  <div class="info">
+                    <div class="valores">
+                      <div class="valorAcumulado">                     <p>$100.000</p>
+                        <p>(50%)</p>
+                      </div>
+                      <p class="valorTotal">
+                        $200.000
+                      </p>
                     </div>
+                    <div class="progress"></div>
+                    <div class="datos">
+                      <div class="personas">
+                        <p>250</p>
+                        <p>Inversores</p>
+                      </div>
+                      <p>15 Dias</p>
+                    </div>
+                    <div class="rentabilidad">
+                      <div class="bloqueUno">
+                        <p class="titulo">RENTABILDAD ANUAL</p>
+                        <p class="porcentajes">4.0%</p>
+                      </div>
+                      <div class="bloqueDos">
+                        <p class="titulo">REVALORIZACIÓN ZONA</p>
+                        <p class="porcentajes">5.0%</p>
+                      </div>
+                    </div>
+                    <button>Invertir</button>
+                  </div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="img/image2-1.jpg" alt="...">
-                    <div class="caption">
-                        <h3>Carlos Antunez 2250</h3>
-                        <p class="text-left">La vivienda se encuentra en el barrio del Cabanyal, perteneciente al distrito de Poblados</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Invertir</a></p>
+                <div class="contenedor">
+                  <div class="titulo">
+                      <p>Malvarrosa</p>
+                      <div> 
+                         <p>Valencia</p>
+                         <p>1 vivienda</p>
+                      </div>
+                  </div>
+                  <div class="prev">
+                      <img src="img/image2-1.jpg" alt="" />
+                  </div>
+                  <div class="info">
+                    <div class="valores">
+                      <div class="valorAcumulado">                     <p>$100.000</p>
+                        <p>(50%)</p>
+                      </div>
+                      <p class="valorTotal">
+                        $200.000
+                      </p>
                     </div>
+                    <div class="progress"></div>
+                    <div class="datos">
+                      <div class="personas">
+                        <p>250</p>
+                        <p>Inversores</p>
+                      </div>
+                      <p>15 Dias</p>
+                    </div>
+                    <div class="rentabilidad">
+                      <div class="bloqueUno">
+                        <p class="titulo">RENTABILDAD ANUAL</p>
+                        <p class="porcentajes">4.0%</p>
+                      </div>
+                      <div class="bloqueDos">
+                        <p class="titulo">REVALORIZACIÓN ZONA</p>
+                        <p class="porcentajes">5.0%</p>
+                      </div>
+                    </div>
+                    <button>Invertir</button>
+                  </div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="img/image2-2.jpg" alt="...">
-                    <div class="caption">
-                        <h3>Valdivia 1241</h3>
-                        <p class="text-left">El punto fuerte de esta oportunidad es indudablemente su ubicación. La vivienda se encuentra en la Calle real</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Invertir</a></p>
+                <div class="contenedor">
+                  <div class="titulo">
+                      <p>Malvarrosa</p>
+                      <div> 
+                         <p>Valencia</p>
+                         <p>1 vivienda</p>
+                      </div>
+                  </div>
+                  <div class="prev">
+                      <img src="img/image2-2.jpg" alt="" />
+                  </div>
+                  <div class="info">
+                    <div class="valores">
+                      <div class="valorAcumulado">                     <p>$100.000</p>
+                        <p>(50%)</p>
+                      </div>
+                      <p class="valorTotal">
+                        $200.000
+                      </p>
                     </div>
+                    <div class="progress"></div>
+                    <div class="datos">
+                      <div class="personas">
+                        <p>250</p>
+                        <p>Inversores</p>
+                      </div>
+                      <p>15 Dias</p>
+                    </div>
+                    <div class="rentabilidad">
+                      <div class="bloqueUno">
+                        <p class="titulo">RENTABILDAD ANUAL</p>
+                        <p class="porcentajes">4.0%</p>
+                      </div>
+                      <div class="bloqueDos">
+                        <p class="titulo">REVALORIZACIÓN ZONA</p>
+                        <p class="porcentajes">5.0%</p>
+                      </div>
+                    </div>
+                    <button>Invertir</button>
+                  </div>
                 </div>
             </div>
         </div>
