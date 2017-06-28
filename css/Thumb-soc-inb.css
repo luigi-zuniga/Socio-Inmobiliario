@@ -1,9 +1,17 @@
+#propiedades
+{
+    background: #EEEEEE;
+    margin: 0px;
+    padding: 0px;
+}
+
 .contenedor {
     width: 100%;
     padding: 5px 5px;
     border: solid 1px;
-    border-color: rgba(0, 0, 0, .1);
+    border-color: white;
     border-radius: 10px;
+    background: #fff;
 }
 
 .titulo {
