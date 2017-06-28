@@ -1,0 +1,160 @@
+.contenedor {
+    width: 100%;
+    padding: 5px 5px;
+    border: solid 1px;
+    border-color: rgba(0, 0, 0, .1);
+    border-radius: 10px;
+}
+
+.titulo {
+    padding: 0 10px;
+    background: white;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.titulo p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.titulo div {
+    font-size: 13px;
+}
+
+.titulo div p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.prev {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.prev img {
+    max-height:80%;
+    width:100%;
+}
+
+.info {
+    width: 100%;
+    height: 240px;
+    background: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info .valores {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    font-size: 14px;
+}
+
+.info .valores .valorAcumulado {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+.info .valores .valorAcumulado p {
+    margin: 0;
+}
+
+.info .valores .valorTotal {
+    margin:0;
+}
+
+.info .progress {
+    height: 20px;
+    width: 90%;
+    background: #d6d6d6;
+    overflow: hidden;
+    position: relative;
+}
+
+.info .progress:before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 100%;
+    background: #5CB85C;
+    left: -20%;
+    top: 0;
+}
+
+.info .datos {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    font-size: 14px;
+}
+
+.info .datos .personas p {
+    margin: 0
+}
+
+.info .rentabilidad {
+    margin-top: 15px;
+    height: 50%;
+    width: 100%;
+    background: #F4F3F4;
+    display: flex;
+    flex-direction: row;
+}
+
+.info .rentabilidad .porcentajes {
+    font-size: 20px;
+}
+
+.info .rentabilidad .bloqueUno,
+.info .rentabilidad .bloqueDos,
+.info .rentabilidad .bloqueTres {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.info .rentabilidad .bloqueUno .titulo,
+.info .rentabilidad .bloqueDos .titulo,
+.info .rentabilidad .bloqueTres .titulo {
+    font-size: 10px;
+    text-align: center;
+    height: 30px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.info button {
+    margin: 12px 2px;
+    width: 100%;
+    height: 18%;
+    background: #337ab7;
+    border:30px;
+    border-bottom: 3px solid #337AB7;
+    color: white;
+    transition: .5s ease;
+}
+
+.info button:hover {
+    background-color: #0275D8;
+}

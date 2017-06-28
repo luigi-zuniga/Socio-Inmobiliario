@@ -24,6 +24,8 @@
 
     <!--Styles CSS Soc-inmobiliario-->
     <link rel="stylesheet" href="css/soc-inb.css">
+    <link rel="stylesheet" href="css/modal-soc.inb.css">
+    <link rel="stylesheet" href="css/Thumb-soc-inb.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +50,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#download">Ingresar</a>
+                         <a role="button" data-toggle="modal" data-target="#login-modal">Ingresar</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="propiedades.html">Propiedades</a>
@@ -89,172 +91,336 @@
             </div>
         </div>
     </section>
-    <div class="row">   
-        <div class="col-md-10 col-md-offset-1">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="img/image2.jpg" alt="...">
-                    <div class="caption">
-                        <h3>Almirante Barroso 46</h3>
-                        <p class="text-left">
-                            En la vivienda, exactamente situada en la calle Ayala 119, se llevará a cabo una reforma completa.</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Invertir</a></p>
+    <div class="container">
+        <div class="col-md-12">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="contenedor">
+                            <div class="titulo">
+                                <p>Malvarrosa</p>
+                                <div>
+                                    <p>Valencia</p>
+                                    <p>1 vivienda</p>
+                                </div>
+                            </div>
+                            <div class="prev">
+                                <img src="img/image2.jpg" alt="" />
+                            </div>
+                            <div class="info">
+                                <div class="valores">
+                                    <div class="valorAcumulado">
+                                        <p>$100.000</p>
+                                        <p>(50%)</p>
+                                    </div>
+                                    <p class="valorTotal">
+                                        $200.000
+                                    </p>
+                                </div>
+                                <div class="progress"></div>
+                                <div class="datos">
+                                    <div class="personas">
+                                        <p>250</p>
+                                        <p>Inversores</p>
+                                    </div>
+                                    <p>15 Dias</p>
+                                </div>
+                                <div class="rentabilidad">
+                                    <div class="bloqueUno">
+                                        <p class="titulo">RENTABILIDAD BRUTA</p>
+                                        <p class="porcentajes">4.0%</p>
+                                    </div>
+                                    <div class="bloqueDos">
+                                        <p class="titulo">RENTABILIDAD NETA</p>
+                                        <p class="porcentajes">5.0%</p>
+                                    </div>
+                                    <div class="bloqueTres">
+                                        <p class="titulo">RENTABILIDAD ANUAL</p>
+                                        <p class="porcentajes">5.0%</p>
+                                    </div>
+                                </div>
+                                <button>Invertir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="contenedor">
+                            <div class="titulo">
+                                <p>Malvarrosa</p>
+                                <div>
+                                    <p>Valencia</p>
+                                    <p>1 vivienda</p>
+                                </div>
+                            </div>
+                            <div class="prev">
+                                <img src="img/image2-1.jpg" alt="" />
+                            </div>
+                            <div class="info">
+                                <div class="valores">
+                                    <div class="valorAcumulado">
+                                        <p>$100.000</p>
+                                        <p>(50%)</p>
+                                    </div>
+                                    <p class="valorTotal">
+                                        $200.000
+                                    </p>
+                                </div>
+                                <div class="progress"></div>
+                                <div class="datos">
+                                    <div class="personas">
+                                        <p>250</p>
+                                        <p>Inversores</p>
+                                    </div>
+                                    <p>15 Dias</p>
+                                </div>
+                                <div class="rentabilidad">
+                                    <div class="bloqueUno">
+                                        <p class="titulo">RENTABILIDAD BRUTA</p>
+                                        <p class="porcentajes">4.0%</p>
+                                    </div>
+                                    <div class="bloqueDos">
+                                        <p class="titulo">RENTABILIDAD NETA</p>
+                                        <p class="porcentajes">5.0%</p>
+                                    </div>
+                                    <div class="bloqueTres">
+                                        <p class="titulo">RENTABILIDAD ANUAL</p>
+                                        <p class="porcentajes">5.0%</p>
+                                    </div>
+                                </div>
+                                <button>Invertir</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="contenedor">
+                            <div class="titulo">
+                                <p>Malvarrosa</p>
+                                <div>
+                                    <p>Valencia</p>
+                                    <p>1 vivienda</p>
+                                </div>
+                            </div>
+                            <div class="prev">
+                                <img src="img/image2-2.jpg" alt="" />
+                            </div>
+                            <div class="info">
+                                <div class="valores">
+                                    <div class="valorAcumulado">
+                                        <p>$100.000</p>
+                                        <p>(50%)</p>
+                                    </div>
+                                    <p class="valorTotal">
+                                        $200.000
+                                    </p>
+                                </div>
+                                <div class="progress"></div>
+                                <div class="datos">
+                                    <div class="personas">
+                                        <p>250</p>
+                                        <p>Inversores</p>
+                                    </div>
+                                    <p>15 Dias</p>
+                                </div>
+                                <div class="rentabilidad">
+                                    <div class="bloqueUno">
+                                        <p class="titulo">RENTABILIDAD BRUTA</p>
+                                        <p class="porcentajes">4.0%</p>
+                                    </div>
+                                    <div class="bloqueDos">
+                                        <p class="titulo">RENTABILIDAD NETA</p>
+                                        <p class="porcentajes">5.0%</p>
+                                    </div>
+                                    <div class="bloqueTres">
+                                        <p class="titulo">RENTABILIDAD ANUAL</p>
+                                        <p class="porcentajes">5.0%</p>
+                                    </div>
+                                </div>
+                                <button>Invertir</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="img/image2-1.jpg" alt="...">
-                    <div class="caption">
-                        <h3>Carlos Antunez 2250</h3>
-                        <p class="text-left">La vivienda se encuentra en el barrio del Cabanyal, perteneciente al distrito de Poblados</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Invertir</a></p>
+        </div>
+
+
+        <section id="features" class="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="section-heading">
+                            <h2>Como Funciona</h2>
+                            <p class="text-muted">Contacta con nuestros y uno brokers te mostrará los diferentes proyectos que se acomodan a tus capacidades y gustos. Elige el proyecto que más se acomode a tu capacidad de pago Nosotros nos hacemos cargo de informarte en todo momento el estado de tu inversión y los pasos a seguir.</p>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="container-fluid">
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <div class="feature-item">
+                                        <i class="fa fa-users" aria-hidden="true"></i>
+                                        <h3>Pensando en tu futuro</h3>
+                                        <p class="text-muted">Cuidando tu futuro y el de tu familia, aumentando tu patrimonio.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-item">
+                                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                        <h3>Beneficios</h3>
+                                        <p class="text-muted">La inversión en departamentos puede borrar las inseguridades de otras formas de inversión</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="feature-item">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <h3>El tiempo nos dió la Razón</h3>
+                                        <p class="text-muted">Históricamente las Propiedades tienen un comportamiento de bajo riesgo, otorgando mayor seguridad</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="feature-item">
+                                        <i class="fa fa-money" aria-hidden="true"></i>
+                                        <h3>Tu eres el Potencial</h3>
+                                        <p class="text-muted">Aprovechas tu capacidad de crédito. ¡A que no lo sabías!</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-item">
+                                        <i class="fa fa-usd" aria-hidden="true"></i>
+                                        <h3>Costo CERO para tí</h3>
+                                        <p class="text-muted">Nosotros creamos un modelo donde nuestro costo va con la inmobiliaria</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <img src="img/image2-2.jpg" alt="...">
-                    <div class="caption">
-                        <h3>Valdivia 1241</h3>
-                        <p class="text-left">El punto fuerte de esta oportunidad es indudablemente su ubicación. La vivienda se encuentra en la Calle real</p>
-                        <p><a href="#" class="btn btn-primary" role="button">Invertir</a></p>
-                    </div>
+        </section>
+<!-- BEGIN # MODAL LOGIN -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                    <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
                 </div>
+
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+                        <div class="modal-body">
+                            <div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-login-msg">Type your username and password.</span>
+                            </div>
+                            <input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+                            <input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                            </div>
+                            <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End # Login Form -->
+
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+                        <div class="modal-body">
+                            <div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Type your e-mail.</span>
+                            </div>
+                            <input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+                        <div class="modal-body">
+                            <div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Register an account.</span>
+                            </div>
+                            <input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                            <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Register Form -->
+
+                </div>
+                <!-- End # DIV Form -->
+
             </div>
         </div>
     </div>
 
 
-    <section id="features" class="features">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="section-heading">
-                        <h2>Como Funciona</h2>
-                        <p class="text-muted">Contacta con nuestros y uno brokers te mostrará los diferentes proyectos que se acomodan a tus capacidades y gustos. Elige el proyecto que más se acomode a tu capacidad de pago Nosotros nos hacemos cargo de informarte en todo momento el estado de tu inversión y los pasos a seguir.</p>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="container-fluid">
-                        <div class="row text-center">
-                            <div class="col-md-4">
-                                <div class="feature-item">
-                                    <i class="fa fa-users" aria-hidden="true"></i>
-                                    <h3>Pensando en tu futuro</h3>
-                                    <p class="text-muted">Cuidando tu futuro y el de tu familia, aumentando tu patrimonio.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="feature-item">
-                                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                                    <h3>Beneficios</h3>
-                                    <p class="text-muted">La inversión en departamentos puede borrar las inseguridades de otras formas de inversión</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="feature-item">
-                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    <h3>El tiempo nos dió la Razón</h3>
-                                    <p class="text-muted">Históricamente las Propiedades tienen un comportamiento de bajo riesgo, otorgando mayor seguridad</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="fa fa-money" aria-hidden="true"></i>
-                                    <h3>Tu eres el Potencial</h3>
-                                    <p class="text-muted">Aprovechas tu capacidad de crédito. ¡A que no lo sabías!</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="feature-item">
-                                    <i class="fa fa-usd" aria-hidden="true"></i>
-                                    <h3>Costo CERO para tí</h3>
-                                    <p class="text-muted">Nosotros creamos un modelo donde nuestro costo va con la inmobiliaria</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-   <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contacta con Nosotros</h2>
-                    <h3 class="section-subheading text-muted">Recuerda que no necesitas ser un inversionista experto</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nombre *" id="name" required data-validation-required-message="Ingresa tu nombre.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email *" id="email" required data-validation-required-message="Ingresa tu correo.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Telefono *" id="phone" required data-validation-required-message="Ingrese su numero de telefono.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Tu Mensaje *" id="message" required data-validation-required-message="Ingrese su mensaje."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Contactar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>  
-    
         <footer>
-        <div class="container">
-            <p>&copy; 2017 Socioinmobiliario. Todos los derechos reservados.</p>
-            <ul class="list-inline">
-                <li>
-                    <a href="#">Contacto: contacto@socioinmobiliario.cl</a>
-                </li>
-                <li>
-                    <a href="#">Teléfono: +56963709483</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+            <div class="container">
+                <p>&copy; 2017 Socioinmobiliario. Todos los derechos reservados.</p>
+                <ul class="list-inline">
+                    <li>
+                        <a href="#">Contacto: contacto@socioinmobiliario.cl</a>
+                    </li>
+                    <li>
+                        <a href="#">Teléfono: +56963709483</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
 
-    <!-- JQUERY -->
-    <script src="lib/jquery/jquery.js"></script>
+        <!-- JQUERY -->
+        <script src="lib/jquery/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="lib/bootstrap/js/bootstrap.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="lib/bootstrap/js/bootstrap.js"></script>
 
-    <!-- Plugin bootstrap JS-->
+        <!-- Plugin bootstrap JS-->
 
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <!--Soc inmobiliario JS -->
-    <script src="js/soc-inb.js"></script>
+        <!--Soc inmobiliario JS -->
+        <script src="js/soc-inb.js"></script>
+        <script src="js/modal-soc-inb.js"></script>
 
 </body>
 
