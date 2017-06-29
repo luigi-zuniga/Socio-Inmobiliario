@@ -591,22 +591,37 @@
 </head>
 
 <body id="page-top">
-    <nav class="navegador">
-    	<span class="logoNav">Socioinmobiliario</span>
-    	<ul class="opcionesNav">
-            <li>
-                <a href="propiedades.html">Propiedades</a>
-            </li>
-            <li>
-                <a href="#">Como funciona</a>
-            </li>
-            <li>
-                <a href="#">Contactos</a>
-            </li>
-        </ul>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background:#335FAD;color:#fff">
+        <div class="container" >
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+              </button>
+                <a class="navbar-brand page-scroll" href="index.html">Socioinmobiliario</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a role="button" data-toggle="modal" data-target="#login-modal">Ingresar</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#propiedades.html">Propiedades</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#features">Como Funciona</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contactanos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-	<div class="cuerpo">
+	<div class="cuerpo" style="margin-top:80px">
 		<div class="izquierda">
 			<ul class="nav nav-pills nav-stacked">
               <li class="active"><a data-toggle="tab" href="#general">General</a></li>
@@ -755,6 +770,10 @@
         </div>
     </div>	
 
+    
+    
+    
+    
     <!-- JQUERY -->
     <script src="lib/jquery/jquery.js"></script>
 

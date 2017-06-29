@@ -24,6 +24,8 @@
 
     <!--Styles CSS Soc-inmobiliario-->
     <link rel="stylesheet" href="css/soc-inb.css">
+    
+    <link rel="stylesheet" href="css/modal-soc.inb.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -229,21 +231,21 @@
 </head>
 
 <body id="page-top">
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top" style="background:#335FAD;color:#fff">
+        <div class="container" >
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                   <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
               </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Socioinmobiliario</a>
+                <a class="navbar-brand page-scroll" href="index.html">Socioinmobiliario</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#download">Ingresar</a>
+                        <a role="button" data-toggle="modal" data-target="#login-modal">Ingresar</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="">Propiedades</a>
@@ -345,11 +347,95 @@
       </div>
     </div>
 
+    <!-- MODAL LOGIN -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" align="center">
+                                  <h3>SocioInmobiliario</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</button>
+                </div>
 
-    <section id="features" class="features" style="padding-bottom: 0;">
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+                        <div class="modal-body">
+                            <div id="div-login-msg">
+                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
+
+                                <span id="text-login-msg">Ingrese su usuario y contraseña</span>
+                            </div>
+                            <input id="login_username" class="form-control" type="text" placeholder="Correo" required>
+                            <input id="login_password" class="form-control" type="password" placeholder="Contraseña" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Recordar
+
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+           <button type="submit" class="btn btn-primary btn-lg btn-block"><a href="perfil.html" style="color: white; text-decoration: none;">Entrar</a></button>
+                            </div>
+                            <div>
+                                <button id="login_lost_btn" type="button" class="btn btn-link">Recuperar</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link">Registrar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End # Login Form -->
 
 
-    </section>
+                    <!-- Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+                        <div class="modal-body">
+                            <div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-lost-msg">Ingrese correo</span>
+                            </div>
+                            <input id="lost_email" class="form-control" type="text" placeholder="Correo" required>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                            </div>
+                            <div>
+                                <button id="lost_login_btn" type="button" class="btn btn-link"></button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link">Registrar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+                        <div class="modal-body">
+                            <div id="div-register-msg">
+                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
+                                <span id="text-register-msg">Registrar una Cuenta</span>
+                            </div>
+                            <input id="register_username" class="form-control" type="text" placeholder="Nombre de Usuario" required>
+                            <input id="register_email" class="form-control" type="text" placeholder="Correo" required>
+                            <input id="register_password" class="form-control" type="password" placeholder="Contraseña" required>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>
+                            </div>
+                            <div>
+                                <button id="register_login_btn" type="button" class="btn btn-link">Entrar</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link">No recuerdo contraseña?</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End | Register Form -->
+                </div>
+                <!-- End # DIV Form -->
     
 
     <footer>
@@ -379,6 +465,7 @@
 
     <!--Soc inmobiliario JS -->
     <script src="js/soc-inb.js"></script>
+    <script src="js/modal-soc-inb.js"></script>
 
 </body>
 
