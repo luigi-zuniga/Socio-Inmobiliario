@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="socioinmobiliario">
+    <title>Socioinmobiliario</title>
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+
+    <!--Fuentes-->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="lib/device-mockups/device-mockups.min.css">
+
+    <!--Styles CSS Soc-inmobiliario-->
+    <link rel="stylesheet" href="css/soc-inb.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        *
+        {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        .contenedor
+        {
+          width: 100%;
+          height: 100vh;
+          padding: 5px 10px;
+          border: solid 1px;
+          border-color: rgba(0, 0, 0, .1);
+          border-radius: 10px;
+        }
+        .contenedorPestañas
+        {
+          width: 100%;
+          height: calc(100vh - 270px);
+          padding: 5px 10px;
+          border: solid 1px;
+          border-color: rgba(0, 0, 0, .1);
+          border-radius: 10px;
+        }
+        .contenedorPestañas .tab-content
+        {
+          padding: 20px;
+          font-size: 18px;
+        }
+        .contenedorPestañas .tab-content #caracteristicas,
+        .contenedorPestañas .tab-content #porque,
+        .contenedorPestañas .tab-content #resumen
+        {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+        }
+        .titulo
+        {
+          padding: 0 10px;
+          background: white;
+          width: 100%;
+          height: 10%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+        }
+        .titulo p {margin: 0; font-weight: bold;}
+        .titulo div
+        {
+          font-size:13px;
+        }
+        .titulo div p{margin: 0; font-size: 13px;}
+        .prev
+        {
+          width: 100%;
+          height: 250px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+        .prev img
+        {
+          max-height:100%;
+          min-width: 95%;
+        }
+        .info
+        {
+          width: 100%;
+          height: 90%;
+          background: white;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+        .info .valores
+        {
+          width: 100%;
+          height: 15%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 15px;
+          font-size: 14px;
+        }
+        .info .valores .valorAcumulado
+        {
+          display: flex;
+          flex-direction: row;
+          margin:  0;
+        }
+        .info .valores .valorAcumulado p{margin:  0;}
+        .info .valores .valorTotal {margin:  0;}
+        .info .progress
+        {
+          height: 15px;
+          width: 90%;
+          background: #d6d6d6;
+          overflow: hidden;
+          position: relative;
+          margin: 0px;
+        }
+        .valoresDos
+        {
+          padding-bottom: 20px;
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+        }
+        .info .progress:before
+        {
+          content: "";
+          position: absolute;
+          height: 15px;
+          width: 100%;
+          background: green;
+          left:-50%;
+          top:0;          
+        }
+        .info .datos
+        {
+          width: 100%;
+          height: 20%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px 20px;
+          font-size: 14px;
+        }
+        .info .datos .personas p{margin: 0}
+        .info .rentabilidad
+        {
+          margin-top: 5px;
+          height: 35%;
+          width: 90%;
+          border: 1px solid;
+          display: flex;
+          flex-direction: row;
+        }
+        .info .rentabilidad .porcentajes
+        {
+          font-size: 20px;
+        }
+        .info  .rentabilidad .bloqueUno,
+        .info  .rentabilidad .bloqueDos,
+        .info  .rentabilidad .bloqueTres
+        {
+          width:50%;
+          height:100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction:column
+        }
+        .info  .rentabilidad .bloqueUno .titulo,
+        .info  .rentabilidad .bloqueDos .titulo,
+        .info  .rentabilidad .bloqueTres .titulo
+        {
+          font-size: 10px;
+          text-align: center;
+          height: 30px;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+        }
+        .info  .rentabilidad .bloqueUno .porcentajes,
+        .info  .rentabilidad .bloqueDos .porcentajes,
+        .info  .rentabilidad .bloqueTres .porcentajes{margin: 0;}
+        .montoInversion
+        {
+          margin-top: 10px;
+          width: 90%;
+          padding: 5px;
+
+        }
+        .info button
+        {
+          margin: 10px 0px;
+          width: 90%;
+          height: 15%;
+          background: #337ab7;
+          border: none;
+          border-bottom: 3px solid gray;
+          color: white;
+          transition: .5s ease;
+        }
+        .info button:hover
+        {
+            background-color: #23527b;
+        }
+        /*Estilos plantilla perfil*/
+        .navegador
+        {
+        	height: 70px;
+        	width: 100%;
+        	display: flex;
+        	justify-content: space-between;
+        	align-items: center;
+      		flex-direction: row;
+      		border-bottom: 1px solid rgba(0,0,0,.3);
+      		padding: 0px 30px;
+        }
+        .logoNav
+        {
+			font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+		    font-weight: 200;
+		    letter-spacing: 1px;
+		    font-size: 26px;
+		    color: #222222;
+        }
+        .opcionesNav
+        {
+        	font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+		    text-transform: uppercase;
+		    letter-spacing: 2px;
+		    font-size: 11px;
+		    list-style: none;
+		    display: flex;
+		    flex-direction: row;
+		    margin: 0;
+        }
+        .opcionesNav li
+        {
+        	padding: 15px;
+        }
+        .opcionesNav li a
+        {
+        	font-size: 11px;
+		    color: #222222;
+		    text-decoration: none;
+        }
+        /*Estilos cuerpo de perfil*/
+        .cuerpo
+        {
+        	width: 100%;
+        	min-height: calc(100vh - 70px);
+        	height: auto;        	
+        	display: flex;
+        	flex-direction: row;
+        	position: relative;
+        }
+        .cuerpo .izquierda
+        {
+        	width: 20%;
+        	/*min-height: calc(100vh - 70px);*/
+        	padding-left: 10px;    	
+        }
+        .cuerpo .izquierda ul li
+        {
+        	padding: 10px 0px;
+        }
+        .cuerpo .derecha
+        {
+        	width: 80%;
+        	/*min-height: calc(100vh - 70px);*/
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        }
+        .cuerpo .derecha .tab-content
+        {
+        	height: 100%;
+        	width: 100%;
+        	display: flex;
+        	justify-content: center;        	
+        	position: relative;
+        	padding-top: 30px; 
+        }
+        .cuerpo .derecha .tab-content #general
+        {
+        	width: 80%;
+        	height: 90%;
+        	background: rgb(240,240,240);
+        }
+        #general
+        {
+        	position: absolute;
+        }        
+        #general .titulo
+        {
+        	height: 10%;
+        	width: 100%;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	font-size: 18px;
+        	background: rgb(200,200,200);
+        }
+        #general .montoInvertido
+        {
+        	height: 15%;
+        	width: 100%;
+        	display: flex;
+        	justify-content: space-between;
+        	align-items: center;
+        	flex-direction: column;
+        	padding: 15px 0;
+        }
+        #general .montosRecibidos
+        {
+        	width: 100%;
+        	height: 40%;
+        }
+        #general .montosRecibidos .fila,
+        #general .montosRecibidos .filaDos,
+        #general .montosRecibidos .filaTres
+        {
+        	width: 100%;
+        	height: 33%;
+        	display: flex;
+        	flex-direction: row;
+        }
+        #general .montosRecibidos .fila .uno,
+        #general .montosRecibidos .fila .dos
+        {
+        	width: 50%;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	flex-direction: column;
+        }
+        #general .montosRecibidos .filaDos .uno,
+        #general .montosRecibidos .filaDos .dos,
+        #general .montosRecibidos .filaDos .tres
+        {
+        	width: 33.333%;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	flex-direction: column;      	
+        	text-align: center;
+        }
+        #general .montosRecibidos .filaTres
+        {
+        	width: 100%;
+        	height: 33.333%;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	flex-direction: column;      	
+        	text-align: center;
+        }
+        #general .estadisticas
+        {
+        	width: 100%;
+        	height: 15%;
+        	display: flex;
+        	flex-direction: row;
+        	padding: 15px 0px;
+        }
+        #general .estadisticas .uno,
+        #general .estadisticas .dos
+        {
+        	width: 50%;
+        	height: 100%;
+        	display: flex;
+        	justify-content: space-between;
+        	align-items: center;
+        	flex-direction: column;
+        }
+        /*inversiones pendientes*/
+        #inverPendientes
+        {
+        	width: 85%;
+        	height: 70%;
+        	position: absolute;
+        }
+        #inverPendientes .casaPendiente
+        {
+        	width: 100%;
+        	height: 100%;
+        	display: flex;
+        	flex-direction: row;
+        	border-radius: 10px;
+        	border: 1px solid rgb(240,240,240);
+        	overflow: hidden;
+        	background: rgb(240,240,240);
+        	margin-bottom: 50px; 
+        }
+        #inverPendientes .casaPendiente .info
+        {
+        	width: 35%;
+        	height: 100%;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        }
+        #inverPendientes .casaPendiente .detallesCasa
+        {
+        	width: 65%;
+        	height: 100%;
+        }
+        #inverPendientes .casaPendiente .info span:nth-child(1)
+        {
+        	font-size: 20px;
+        	font-weight: bold;
+        	padding-bottom: 50px;
+        }
+        #inverPendientes .casaPendiente .info span:nth-child(2),
+        #inverPendientes .casaPendiente .info span:nth-child(3)
+        {
+        	font-size: 18px;
+        }
+        #inverPendientes .casaPendiente .info span:nth-child(4)
+        {
+        	padding-top: 50px;
+        	font-size: 20px; 
+        }
+        #inverPendientes .casaPendiente .detallesCasa img
+        {
+        	width: 100%;
+        	height: 50%;
+        	border: none;
+        }
+        #inverPendientes .casaPendiente .detallesCasa span:nth-child(2)
+        {
+        	width: 100%;
+        	height: 10%;
+        	margin: 5px 0px 0px 10px;
+        	font-size: 20px;
+        }
+        #inverPendientes .casaPendiente .detallesCasa .detalles
+        {
+        	width: 100%;
+        	height: 40%;
+        	padding: 0px 10px;
+        }
+        /*Inversiones completas*/
+        #inverCompletas
+        {
+        	width: 85%;
+        	height: 50%;
+        	position: absolute;
+        }
+        #inverCompletas .casaPendiente
+        {
+        	width: 100%;
+        	height: 100%;
+        	display: flex;
+        	flex-direction: row;
+        	border-radius: 10px;
+        	border: 1px solid rgb(240,240,240);
+        	overflow: hidden;
+        	background: rgb(240,240,240);
+        	margin-bottom: 50px; 
+        }
+        #inverCompletas .casaPendiente .info
+        {
+        	width: 35%;
+        	height: 100%;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        }
+        #inverCompletas .casaPendiente .detallesCasa
+        {
+        	width: 65%;
+        	height: 100%;
+        }
+        #inverCompletas .casaPendiente .info span:nth-child(1)
+        {
+        	font-size: 20px;
+        	font-weight: bold;
+        	padding-bottom: 50px;
+        }
+        #inverCompletas .casaPendiente .info span:nth-child(2),
+        #inverCompletas .casaPendiente .info span:nth-child(3)
+        {
+        	font-size: 18px;
+        }
+        #inverCompletas .casaPendiente .info span:nth-child(4)
+        {
+        	padding-top: 50px;
+        	font-size: 20px; 
+        }
+        #inverCompletas .casaPendiente .detallesCasa img
+        {
+        	width: 100%;
+        	height: 100%;
+        	border: none;
+        }
+        #inverCompletas .casaPendiente .detallesCasa span:nth-child(2)
+        {
+        	width: 100%;
+        	height: 10%;
+        	margin: 5px 0px 0px 10px;
+        	font-size: 20px;
+        }
+        #inverCompletas .casaPendiente .detallesCasa .detalles
+        {
+        	width: 100%;
+        	height: 40%;
+        	padding: 0px 10px;
+        }
+        /*Editar Datos*/
+        #editarDatos
+        {
+        	position: absolute;
+        	width: 100%;
+        	min-height: calc(100vh - 100px);
+        	display: flex;
+        	flex-direction: column;
+        	align-items: center;
+        	justify-content: center;
+        }
+        #editarDatos form
+        {
+        	width: 50%;
+        	min-height: calc(100vh - 100px);
+        	display: flex;
+        	flex-direction: column;
+        	justify-content: center;
+        }
+        #editarDatos form button
+        {
+        	margin-top: 20px;
+        	background-color: #337ab7;
+        	padding: 5px;
+        	color: white;
+        	font-size: 18px;
+        	border: none;
+        	border-radius: 10px;
+        }
+        /*Datos bancarios*/
+        #datosBancarios
+        {
+        	position: absolute;
+        	width: 100%;
+        	min-height: calc(100vh - 100px);
+        	display: flex;
+        	flex-direction: column;
+        	align-items: center;
+        	justify-content: center;
+        }
+        #datosBancarios form
+        {
+        	width: 50%;
+        	min-height: calc(100vh - 100px);
+        	display: flex;
+        	flex-direction: column;
+        	justify-content: center;
+        }
+        #datosBancarios form button
+        {
+        	margin-top: 20px;
+        	background-color: #337ab7;
+        	padding: 5px;
+        	color: white;
+        	font-size: 18px;
+        	border: none;
+        	border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body id="page-top">
+    <nav class="navegador">
+    	<span class="logoNav">Socioinmobiliario</span>
+    	<ul class="opcionesNav">
+            <li>
+                <a href="#">Propiedades</a>
+            </li>
+            <li>
+                <a href="#">Como funciona</a>
+            </li>
+            <li>
+                <a href="#">Contactos</a>
+            </li>
+        </ul>
+    </nav>
+
+	<div class="cuerpo">
+		<div class="izquierda">
+			<ul class="nav nav-pills nav-stacked">
+              <li class="active"><a data-toggle="tab" href="#general">General</a></li>
+              <li><a data-toggle="tab" href="#inverPendientes">Inversiones pendientes</a></li>
+              <li><a data-toggle="tab" href="#inverCompletas">Inversiones completas</a></li>
+              <li><a data-toggle="tab" href="#editarDatos">Editar datos</a></li>
+              <li><a data-toggle="tab" href="#datosBancarios">Datos bancarios</a></li>
+            </ul>
+		</div>
+		<div class="derecha">
+			<div class="tab-content">
+              	<div id="general" class="tab-pane fade in active">
+            		<span class="titulo">Invertido</span>
+            		<div class="montoInvertido">
+            			<span>Monto total invertido</span>
+            			<span>$1.000.000</span>
+            		</div>
+            		<span class="titulo">Total recibido</span>
+            		<div class="montosRecibidos">
+            			<div class="fila">
+            				<div class="uno">
+            					<span>Capital congelado</span>
+            					<span>$6.000</span>
+            				</div>
+            				<div class="dos">
+            					<span>Arriendos recibidos</span>
+            					<span>$250.000</span>
+            				</div>
+            			</div>
+            			<div class="filaDos">
+            				<div class="uno">
+            					<span>Comision inmobiliario</span>
+            					<span>$6.000</span>
+            				</div>
+            				<div class="dos">
+            					<span>Comision socio inmobiliario</span>
+            					<span>$6.000</span>
+            				</div>
+            				<div class="tres">
+            					<span>Comision socio inmobiliario por arriendo</span>
+            					<span>$6.000</span>
+            				</div>
+            			</div>
+            			<div class="filaTres">
+            				<span>Utilidad</span>
+            				<span>$6.000</span>
+            			</div>
+            		</div>
+            		<span class="titulo">Estadisticas generales</span>
+	              	<div class="estadisticas">
+	              		<div class="uno">
+	              			<span>TIR Promedio</span>
+	            			<span>1,5 Meses</span>
+	              		</div>
+	              		<div class="dos">
+	              			<span>Propiedades</span>
+	            			<span>2</span>
+	              		</div>
+	              	</div>
+              	</div>
+              	<div id="inverPendientes" class="tab-pane fade">
+              		<div class="casaPendiente">
+              			<div class="info">
+              				<span>Nombre</span>
+              				<span>Monto</span>
+              				<span>$1.000</span>
+              				<span>Estado</span>
+              				<button>Pendiente</button>
+              			</div>
+              			<div class="detallesCasa">
+              				<img src="img/image2.jpg" alt="">
+              				<span>Caracteristicas</span>
+              				<div class="detalles">
+              					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem accusamus, obcaecati ut optio ducimus accusantium velit facilis totam quo voluptates earum, eveniet illum eaque quibusdam quisquam architecto sit possimus in!</span>
+              				</div>
+              			</div>
+              		</div>
+              		<div class="casaPendiente">
+              			<div class="info">
+              				<span>Nombre</span>
+              				<span>Monto</span>
+              				<span>$1.000</span>
+              				<span>Estado</span>
+              				<button>Pendiente</button>
+              			</div>
+              			<div class="detallesCasa">
+              				<img src="img/image2.jpg" alt="">
+              				<span>Caracteristicas</span>
+              				<div class="detalles">
+              					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem accusamus, obcaecati ut optio ducimus accusantium velit facilis totam quo voluptates earum, eveniet illum eaque quibusdam quisquam architecto sit possimus in!</span>
+              				</div>
+              			</div>
+              		</div>
+	            </div>
+	            <div id="inverCompletas" class="tab-pane fade">
+	            	<div class="casaPendiente">
+              			<div class="info">
+              				<span>Nombre</span>
+              				<span>Monto</span>
+              				<span>$1.000</span>
+              			</div>
+              			<div class="detallesCasa">
+              				<img src="img/image2.jpg" alt="">
+              			</div>
+              		</div>
+              		<div class="casaPendiente">
+              			<div class="info">
+              				<span>Nombre</span>
+              				<span>Monto</span>
+              				<span>$1.000</span>
+              			</div>
+              			<div class="detallesCasa">
+              				<img src="img/image2.jpg" alt="">
+              			</div>
+              		</div>
+	            </div>
+	            <div id="editarDatos" class="tab-pane fade">
+	            	<form action="">
+	            		<label for="nombre">Nombres</label>
+	            		<input type="text" id="nombre">
+	            		<label for="apellidos">Apellidos</label>
+	            		<input type="text" id="apellidos">
+	            		<label for="correo">Correo</label>
+	            		<input type="mail" id="correo">
+	            		<label for="cuenta">Cuenta</label>
+	            		<input type="text" id="cuenta">
+	            		<button>Guardar</button>
+	            	</form>
+            	</div>
+            	<div id="datosBancarios" class="tab-pane fade">
+            		<form action="">
+	            		<label for="banco">Banco</label>
+	            		<select name="" id="banco">
+	            			<option value="">Banco 1</option>
+	            			<option value="">Banco 2</option>
+	            			<option value="">Banco 3</option>
+	            		</select>
+	            		<label for="nroUno">Nro. Algo</label>
+	            		<input type="text" id="nroUno">
+	            		<label for="nroDos">Nro. Algo</label>
+	            		<input type="text" id="nroDos">
+	            		<button>Guardar</button>
+	            	</form>
+            	</div>
+			</div>
+        </div>
+    </div>	
+
+    <!-- JQUERY -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Plugin bootstrap JS-->
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!--Soc inmobiliario JS -->
+    <script src="js/soc-inb.js"></script>
+</body>
+</html>
